@@ -13,7 +13,7 @@ namespace OdnomerniyMassiv
 
             for (int i = 0; i < size; i++)
             {
-                Console.Write("Введи элемент массива " + (i + 1) + " ");
+                Console.Write("Введи элемент массива " + (i + 1) + ": ");
                 myArray[i] = int.Parse(Console.ReadLine());
             }
 
@@ -27,16 +27,15 @@ namespace OdnomerniyMassiv
             Console.WriteLine();
             Console.WriteLine("Четные элементы массива: ");
 
-            for (int i = 0; i < size; i++)
-            {
-                if (myArray[i] % 2 == 0)
-                    Console.Write(myArray[i] + " ");
-            }
+            PrintEvenElements(myArray);
+
+            Console.WriteLine();
+            Console.WriteLine("Сумма четных элементов массива: " + SumEvenElements(myArray));
 
             Console.WriteLine();
             Console.WriteLine("Наименьший элемент массива: ");
 
-            int minel = 2147483647;
+            int minel = int.MaxValue;
             for (int i = 0; i < size; i++)
             {
                 if (myArray[i] < minel)
@@ -46,9 +45,29 @@ namespace OdnomerniyMassiv
             }
 
             Console.WriteLine(minel);
-
-
             Console.ReadLine();
+        }
+
+        static void PrintEvenElements(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 == 0)
+                    Console.Write(array[i] + " ");
+            }
+        }
+
+        static int SumEvenElements(int[] array)
+        {
+            int sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 == 0)
+                {
+                    sum += array[i];
+                }
+            }
+            return sum;
         }
     }
 }
