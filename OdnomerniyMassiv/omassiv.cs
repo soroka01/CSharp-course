@@ -2,7 +2,7 @@
 
 namespace OdnomerniyMassiv
 {
-    internal class omassiv
+    internal class Omassiv
     {
         static void Main(string[] args)
         {
@@ -26,7 +26,7 @@ namespace OdnomerniyMassiv
 
             Console.WriteLine();
             Console.WriteLine("Четные элементы массива: ");
-            
+
             for (int i = 0; i < size; i++)
             {
                 if (myArray[i] % 2 == 0)
@@ -37,9 +37,9 @@ namespace OdnomerniyMassiv
             Console.WriteLine("Наименьший элемент массива: ");
 
             int minel = 2147483647;
-            for (int i = 0;i<size;i++)
+            for (int i = 0; i < size; i++)
             {
-                if (myArray[i]<minel) 
+                if (myArray[i] < minel)
                 {
                     minel = myArray[i];
                 }
